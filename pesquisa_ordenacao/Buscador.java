@@ -9,13 +9,8 @@ public class Buscador {
 
     //criar metodo para fazer a busca sequencial
     public  int buscaSeq(int chave){
-
-        for (int i = 0; i < v.length; i++ ){
-            if (this.v[i] == chave ){
-              return i;
-            }
-        }
-        return -1;
+        //inicia a busca sequencial
+        return buscaSeqRecursivo(v.length, chave);
     }
     //criar sequencial com recursividade
     public int buscaSeqRecursivo(int tamanho, int chave){
