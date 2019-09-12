@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Pesquisa_Ordenacao {
     public static void main(String[] args){
         //define a qtd de elementos do vetor
-        int qtdelementos = 100;
+        int qtdelementos = 10000;
         //cria vetor com o tamanho desejado.
         int v[] = new int[qtdelementos];
         //preencher o vetor com um valor randomizado
@@ -17,18 +17,23 @@ public class Pesquisa_Ordenacao {
             //colocar o novo valor na posicao i do vetor
             v[i] = (int) (Math.random() * qtdelementos);
         }
-        //medir tempo
-        long tinicio = System.currentTimeMillis();
+
         //criar objeto buscador
         Buscador b = new Buscador(v);
+
         //procruar um numero
         String valor = JOptionPane.showInputDialog("Digite um numero");
         int retorno = b.buscaSeq(Integer.parseInt(valor));
         if(retorno == -1){
             JOptionPane.showMessageDialog(null,"Elemento nao encontrado");
         }else{
-            JOptionPane.showMessageDialog(null, "Elemento encontrado na posição "+String.valueOf(retorno) + "do vetor");
+            JOptionPane.showMessageDialog(null, "Elemento encontrado na posição "+String.valueOf(retorno) + " do vetor");
         }
+        //medir tempo
+        long tinicio = System.currentTimeMillis();
+        //criar objeto ordenador
+        Ordenador o = new Ordenador(v);
+        o.bubbleSort();
         //colocar a difenrenca
         long tfinal = System.currentTimeMillis();
         System.out.println("Gastou "+(tfinal-tinicio));
