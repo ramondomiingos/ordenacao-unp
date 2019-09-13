@@ -27,5 +27,20 @@ public class Buscador {
         }
 
     }
+    public int buscaBinaria(int chave, int inicio, int fim){
+        if(inicio > fim){
+            return -1;
+        }
+        int meio = (inicio + fim )/2;
+
+        if(v[meio] == chave){
+            return meio;
+        }
+        if( chave < v[meio]){
+           return buscaBinaria(chave, inicio, meio-1);
+        }else{
+            return buscaBinaria(chave, meio+1, fim);
+        }
+    }
 
 }

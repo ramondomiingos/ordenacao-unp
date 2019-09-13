@@ -36,6 +36,13 @@ public class Pesquisa_Ordenacao {
         o.bubbleSort();
         //colocar a difenrenca
         long tfinal = System.currentTimeMillis();
-        System.out.println("Gastou "+(tfinal-tinicio));
+        System.out.println("Ordenou em  "+(tfinal-tinicio));
+
+        retorno = b.buscaBinaria(Integer.parseInt(valor), 0, v.length);
+        if(retorno == -1){
+            JOptionPane.showMessageDialog(null,"Elemento nao encontrado");
+        }else{
+            JOptionPane.showMessageDialog(null, "Elemento encontrado na posição "+String.valueOf(retorno) + " do vetor");
+        }
     }
 }
